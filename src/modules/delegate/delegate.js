@@ -40,7 +40,7 @@
             })
             .when('/delegate/personal/pserverGuide', {
                 templateUrl: 'modules/delegate/list.html',
-                controller: 'pserverGuide.html'
+                controller: 'pserverGuideCtrl'
             })
             .when('/delegate/team/tproBakClause', {
                 templateUrl: 'modules/delegate/list.html',
@@ -177,7 +177,7 @@
 
     .controller('pproRaiseBulletinCtrl', ['$scope', 'infoService', function($scope, infoService){
 
-        $scope.title = '产品募集公告款';
+        $scope.title = '产品募集公告';
         $scope.back = 'delegate/personal';
 
         $scope.infoList = [];
