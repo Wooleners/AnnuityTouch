@@ -1,0 +1,34 @@
+<div style="position:absolute;top:0;left:0;right:0;height:106px;background-color:#fff;">
+    <header class="header-tit" style="height:18px;">
+        <a class="goBack fl" href="#main"><i></i>返回</a>
+        <p class="txt_c" ng-bind="title"></p>
+    </header>
+    <div class="consult-Tab fs15" style="50px;">
+        <ul class="c">
+            <li class="fl tabControl tabControl-on" ng-repeat-start="tab in tabs" ng-click="toggleTabs($index)" ng-bind="tab.title" ng-if="tab.on"></li>
+            <li class="fl tabControl" ng-repeat-end ng-if="!tab.on"  ng-click="toggleTabs($index)" ng-bind="tab.title"></li>
+        </ul>
+    </div>
+</div>
+<section>
+        <div class="cl-333" id="wrapper">
+            <div id="scroller" class="swiper-container">
+                <div id="pullDown" style="display:none">
+                    <span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+                </div>
+                <ul class="contentList1 bg-fff swiper-wrapper" id="thelist">
+                    <li ng-repeat="info in infoList" ng-switch on="info.type" class="swiper-slide">
+                        <a ng-switch-when="1" href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+                        <a ng-switch-when="2" ng-bind="info.content.articleTitle" target="_self" href="{{info.content.atts[0].attPath}}" download="{{info.content.atts[0].attPath}}"></a>
+                        <a ng-switch-when="3" ng-bind="info.content.articleTitle" ng-href="{{info.content.jumpLink}}"></a>
+                    </li>
+                </ul>
+                <div id="pullUp" style="display:none">
+                    <i class="loading-i"></i><span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多</span>
+                </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</section>

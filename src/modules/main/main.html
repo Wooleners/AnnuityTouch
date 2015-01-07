@@ -1,0 +1,164 @@
+<header class="header-tit">
+    <a class="goBack fl" href="http://m.pingan.com/c3/index.shtml"><i></i>返回</a>
+    <p class="txt_c" ng-bind="title"></p>
+</header>
+<section class="ad">
+    <div id="p_rolling" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" ng-repeat="slide in slides">
+                <img ng-src="{{slide.img}}" />
+            </div>
+        </div>
+    </div>
+    <div class="arrowList" id="p_rolling_arrows">
+        <ul>
+            <li class="arrow sel-arrow" ng-repeat-start="slide in slides" ng-if="$first"></li>
+            <li class="sel-arrow" ng-repeat-end ng-if="!$first"></li>
+        </ul>
+    </div>
+</section>
+<section class="tools m-b12 c">
+    <div id="p_tools" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="tools-tab c swiper-slide">
+                <ul class="c">
+                    <li class="square">
+                        <a class="tool-icon tool-icon7" href="http://m.pingan.com/c3/yanglaoxian/weixin/baodan_yanzhen.shtml"></a>
+                        <p>保单验真</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon8" href="http://m.pingan.com/c3/yanglaoxian/weixin/baodan_chaxun.shtml"></a>
+                        <p>我的保单</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon9" href="http://m.pingan.com/c3/yanglaoxian/weixin/baodan_lipei.shtml"></a>
+                        <p>理赔信息</p>
+                    </li>
+                </ul>
+                <ul class="c">
+                    <li class="square">
+                        <a class="tool-icon tool-icon10" href="http://m.pingan.com/c3/yanglaoxian/weixin/baodan_zhanghu.shtml"></a>
+                        <p>长险账户</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon11" href="https://m.pingan.com/t/QuickIndex.screen?f=gb&v=2"></a>
+                        <p>企业年金</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon12" href="#static/infoReveal"></a>
+                        <p>信息披露</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tools-tab c swiper-slide">
+                <ul class="c">
+                    <li class="square">
+                        <a class="tool-icon tool-icon1" href="http://annuity.pingan.com/cms-tmplt/insurance/pricenotice.do"></a>
+                        <p>投连险价格</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon2" href="http://resources.pingan.com/app_upload/file/annuity/list.xls" download></a>
+                        <p>垫付医院</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon3" href="http://m.pingan.com/c3/yanglaoxian/weixin/health_tiwen.shtml"></a>
+                        <p>健康咨询</p>
+                    </li>
+                </ul>
+                <ul class="c">
+                    <li class="square">
+                        <a class="tool-icon tool-icon4" href="http://m.pingan.com/c3/yanglaoxian/weixin/mess_wangdian.shtml"></a>
+                        <p>网点查询</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon5" href="http://m.pingan.com/c3/yanglaoxian/weixin/mess_wenti.shtml"></a>
+                        <p>常见问题</p>
+                    </li>
+                    <li class="square">
+                        <a class="tool-icon tool-icon6" href="#static/guide"></a>
+                        <p>单证指引</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrowList arrowBox" id="p_tools_arrows">
+        <ul>
+            <li class="sel-arrow arrow"></li>
+            <li class="sel-arrow"></li>
+        </ul>
+    </div>
+</section>
+<section class="product">
+    <div class="product-cont product-tit fs16 c">企业年金<a class="fs14 fr cl-666" href="#annuity">更多>></a></div>
+    <div class="product-cont c">
+        <a class="fl" href="#static/entManage"><i class="pro-arrow pro-arrow1"></i>受托管理</a>
+        <a class="fr" href="#static/accountsManage"><i class="pro-arrow pro-arrow1"></i>账户管理</a>
+    </div>
+    <div class="product-cont c">
+        <a class="fl" href="#static/investManage"><i class="pro-arrow pro-arrow1"></i>投资管理</a>
+        <a class="fr" href="#static/operationsManage"><i class="pro-arrow pro-arrow1"></i>运营管理</a>
+    </div>
+</section>
+<section class="product">
+    <div class="product-cont product-tit fs16 c">委托产品<a class="fs14 fr cl-666" href="#delegate">更多>></a></div>
+    <div class="product-cont c">
+        <a class="fl" href="#delegate?type=person"><i class="pro-arrow pro-arrow2"></i>个人受托产品</a>
+        <a class="fr" href="#delegate?type=team"><i class="pro-arrow pro-arrow2"></i>团队受托产品</a>
+    </div>
+</section>
+<section class="product">
+    <div class="product-cont product-tit fs16 c">团体保险<a class="fs14 fr cl-666" href="#groupIns">更多>></a></div>
+    <div class="product-cont product-cont2 c">
+        <a class="fl" href="#groupIns/company"><i class="pro-arrow pro-arrow3 m-r5"></i>企业客户</a>
+        <a class="product-center" href="#groupIns/personal"><i class="pro-arrow pro-arrow3 m-r5"></i>个人客户</a>
+        <a class="fr" href="#groupIns/jbd"><i class="pro-arrow pro-arrow3 m-r5"></i>金保典</a>
+    </div>
+</section>
+<section class="product">
+    <div class="product-cont product-tit fs16 c">补充医疗</div>
+    <div class="product-cont c">
+        <a class="fl" href="#medical"><i class="pro-arrow pro-arrow4"></i>甘肃大病保险</a>
+    </div>
+</section>
+<!-- <section class="all-product cl-666">全部产品</section> -->
+<!--资讯信息-->
+<section class="consult">
+    <div class="subTitle">资讯信息<a class="fs14 fr cl-666" href="#news">更多>></a></div>
+    <section>
+        <nav class="consult-Tab fs15">
+            <ul class="c">
+                <li class="fl tabControl tabControl-on" ng-repeat-start="tab in tabs" ng-click="toggleTabs($index)" ng-bind="tab.title" ng-if="tab.on"></li>
+                <li class="fl tabControl" ng-repeat-end ng-if="!tab.on"  ng-click="toggleTabs($index)" ng-bind="tab.title"></li>
+            </ul>
+        </nav>
+        <div class="consult-cont cl-333">
+            <div>
+                <ul class="contentList1">
+                    <li ng-repeat="info in infoList">
+                        <a href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+<!--联系方式-->
+<section class="contact">
+    <div class="subTitle">联系方式</div>
+    <div class="contact-cont c">
+        <p class="fl">投保、理赔、咨询、救援、查询、投诉、团体保险及企业年金可以拨打我们的热线电话</p>
+        <a class="fr callUp" href="tel:95511">95511转6<br><span class="fs14">点击拨打</span></a>
+    </div>
+</section>
+<footer>
+    <div class="footer-copy fs14">
+        <a class="cl-333" href="http://m.pingan.com/m/index.screen?v=1">简版</a>
+        |
+        <a class="cl-333" href="http://m.pingan.com/m/index.screen?v=2">触屏版</a>
+        |
+        <a class="cl-9c0c0c" href="#">炫彩版</a>
+    </div>
+    <p class="copyright cl-333 fs12">Copyright ©2013-2014 m.pingan.com版权所有</p>
+</footer>

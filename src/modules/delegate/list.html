@@ -1,0 +1,13 @@
+<header class="header-tit">
+    <a class="goBack fl" ng-href="#{{back}}"><i></i>返回</a>
+    <p class="txt_c" ng-bind="title"></p>
+</header>
+<section class="bg-fff cl-666 fs16">
+    <ul class="contentList1 bg-fff swiper-wrapper">
+        <li ng-repeat="info in infoList" ng-switch on="info.type" class="swiper-slide">
+            <a ng-switch-when="1" href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+            <a ng-switch-when="2" ng-bind="info.content.articleTitle" target="_self" href="{{info.content.atts[0].attPath}}" download="{{info.content.atts[0].attPath}}"></a>
+            <a ng-switch-when="3" ng-bind="info.content.articleTitle" ng-href="{{info.content.jumpLink}}"></a>
+        </li>
+    </ul>
+</section>

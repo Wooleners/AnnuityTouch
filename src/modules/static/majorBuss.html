@@ -1,0 +1,21 @@
+<header class="header-tit">
+    <a class="goBack fl" href="#static/infoReveal"><i></i>返回</a>
+    <p class="txt_c" ng-bind="title"></p>
+</header>
+<section>
+    <div class="consult-cont cl-333">
+        <div id="p_news" class="swiper-container">
+            <ul class="contentList1 swiper-wrapper">
+                <li ng-repeat="info in infoList" ng-switch on="info.type" class="swiper-slide" repeat-complete="repComplete()">
+                    <a ng-switch-when="1" href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+                    <a ng-switch-when="2" ng-bind="info.content.articleTitle" target="_self" href="{{info.content.atts[0].attPath}}" download="{{info.content.atts[0].attPath}}"></a>
+                    <a ng-switch-when="3" ng-bind="info.content.articleTitle" ng-href="{{info.content.jumpLink}}"></a>
+                </li>
+            </ul>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</section>
+<div class="loading txt_c fs12 cl-666" ng-if="totalNum > infoBufferNum" ng-click="loadMore()">上拉加载更多</div>

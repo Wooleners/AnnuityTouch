@@ -1,0 +1,29 @@
+<header class="header-tit">
+    <a class="goBack fl" href="#main"><i></i>返回</a>
+    <p class="txt_c" ng-bind="title"></p>
+</header>
+<section class="bg-fff cl-666 fs16">
+    <!-- <nav class="consult-Tab consult-Tab2 fs15">
+        <ul class="c">
+            <li class="fl tabControl tabControl-on" ng-repeat-start="tab in tabs" ng-click="toggleTabs($index)" ng-bind="tab.title" ng-if="tab.on"></li>
+            <li class="fl tabControl" ng-repeat-end ng-if="!tab.on"  ng-click="toggleTabs($index)" ng-bind="tab.title"></li>
+        </ul>
+    </nav>
+    <div class="consult-cont cl-333">
+        <div id="p_news" class="swiper-container">
+            <ul class="contentList1 swiper-wrapper">
+                <li ng-repeat="info in infoList" ng-switch on="info.type" class="swiper-slide" repeat-complete="repComplete()">
+                    <a ng-switch-when="1" href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+                    <a ng-switch-when="2" ng-bind="info.content.articleTitle" target="_self" href="{{info.content.atts[0].attPath}}" download="{{info.content.atts[0].attPath}}"></a>
+                    <a ng-switch-when="3" ng-bind="info.content.articleTitle" ng-href="{{info.content.jumpLink}}"></a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <a class="sel-list c" href="#delegate/personal">
+        <span class="fl">个人委托</span><i class="arrow-r fr"></i>
+    </a>
+    <a class="sel-list c" href="#delegate/team">
+        <span class="fl">团体委托</span><i class="arrow-r fr"></i>
+    </a>
+</section>

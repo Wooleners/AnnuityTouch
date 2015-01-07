@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="annuityApp" ng-cloak>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>平安养老险</title>
+    <!-- build:cssLib -->
+    <!-- endbuild -->
+    <!-- build:cssApp -->
+    <!-- endbuild -->
+
+  </head>
+  <body>
+      <div ng-view autoscroll="true"></div>
+        <!-- build:jsLib -->
+        <!-- endbuild -->
+        <!-- build:jsApp -->
+        <!-- endbuild -->
+
+  </body>
+  <script type="text/javascript">
+      var gDomain = "sdc.pingan.com";
+
+      // SDC ProductionMode Domain
+      var gDcsId = "dcspymm36v5rgwyi354yjpm91_6q9m";
+
+      var gFpc = "WT-FPC";
+
+      var gConvert = true;
+
+      var gWTIDJS = window.document.createElement("script");
+
+      window.document.getElementsByTagName("head")[0].appendChild(gWTIDJS);
+
+      if (typeof gConvert != "undefined" && gConvert && document.cookie.indexOf(gFpc + "=") == -1 && document.cookie.indexOf("WTLOPTOUT=") == -1) {
+          gWTIDJS.src = "http" + (window.location.protocol.indexOf("https:") == 0 ? "s" :"") + "://" + gDomain + "/" + gDcsId + "/wtid.js";
+      }
+  </script>
+  <script type="text/javascript">
+  setTimeout(function(){
+      var jDomain = "m.pingan.com";
+      var js_path = "/app_js/sdc/prd/sdc_m.js ";
+      var domain = "http" + (window.location.protocol.indexOf("https:") == 0 ? "s" :"" + "://" + jDomain);
+      var SDC_js = document.createElement("script");
+      SDC_js.src = domain + js_path;
+      var headElem = document.getElementsByTagName("head")[0];
+      headElem.appendChild(SDC_js);
+  }, 0);
+  </script>
+</html>
