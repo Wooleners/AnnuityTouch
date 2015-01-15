@@ -2,6 +2,7 @@
 
     angular.module('annuityApp', [
         'ngRoute',
+        'pdf',
         'annuityApp.infoService',
         'annuityApp.main',
         'annuityApp.news',

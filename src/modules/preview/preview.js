@@ -1,4 +1,4 @@
-    angular.module('annuityApp.preview', ['ngRoute'])
+    angular.module('annuityApp.preview', ['ngRoute', 'pdf'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/preview'  , {
@@ -8,81 +8,15 @@
     }])
 
     .controller('previewCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
-        $scope.path = $routeParams.path;
-        $scope.title = $routeParams.name;
+        $scope.title = '预览';
+        //url
+        $scope.pdfUrl = $routeParams.path || null;
+        
+        //nav init
+        $scope.scroll = 0;
 
-        initPdf("/app/images/123.pdf");
-
-        var myService = $resource($routeParams.path, {}, {
-            $getPdf: {
-                responseType: 'arraybuffer',
-                transformResponse: function(data, headersGetter) {
-                    // Stores the ArrayBuffer object in a property called "data"
-                    return { data : data };
-                }
-            }
-        });
-        // var myPdf = myService.$getPdf();
-        // myPdf.$promise.then(function() {
-        //     var docInitParams = {
-        //         data: myPdf.data
-        //     };
-        //
-        //     PDFJS.getDocument(docInitParams).then(function (pdf) {
-        //         console.dir(pdf);
-        //     });
-        // });
-
-        function initPdf(path){
-            // If absolute URL from the remote server is provided, configure the CORS
-            // header on that server.
-            //
-            var url = path;
-
-            //
-            // Disable workers to avoid yet another cross-origin issue (workers need
-            // the URL of the script to be loaded, and dynamically loading a cross-origin
-            // script does not work).
-            //
-            // PDFJS.disableWorker = true;
-
-            //
-            // In cases when the pdf.worker.js is located at the different folder than the
-            // pdf.js's one, or the pdf.js is executed via eval(), the workerSrc property
-            // shall be specified.
-            //
-            // PDFJS.workerSrc = '../../build/pdf.worker.js';
-
-            //
-            // Asynchronous download PDF
-            //
-            PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
-                //
-                // Fetch the first page
-                //
-                pdf.getPage(1).then(function getPageHelloWorld(page) {
-                    var scale = 1.5;
-                    var viewport = page.getViewport(scale);
-
-                    //
-                    // Prepare canvas using PDF page dimensions
-                    //
-                    var canvas = document.getElementById('the-canvas');
-                    var context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    //
-                    // Render PDF page into canvas context
-                    //
-                    var renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-
-
-            });
+        $scope.getNavStyle = function(scroll) {
+            if (scroll > 100) return 'pdf-controls fixed';
+            else return 'pdf-controls';
         }
     }]);
