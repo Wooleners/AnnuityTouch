@@ -6,7 +6,8 @@ module.exports = {
     'bower_components/angular-pdf/dist/angular-pdf.js',
     'bower_components/angular-route/angular-route.js',
     'bower_components/swiper/dist/idangerous.swiper.js',
-    'bower_components/iscroll/build/iscroll.js'
+    'bower_components/iscroll/build/iscroll.js',
+    'bower_components/angular-base64/angular-base64.js'
   ],
   cssLib: [
     'bower_components/normalize.css/normalize.css',

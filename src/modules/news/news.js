@@ -1,5 +1,5 @@
 
-    angular.module('annuityApp.news', ['ngRoute'])
+    angular.module('annuityApp.news', ['ngRoute', 'base64'])
 
         .config(['$routeProvider', function($routeProvider) {
           $routeProvider.when('/news', {
@@ -8,7 +8,7 @@
           });
         }])
 
-        .controller('newsCtrl', ['$scope', 'infoService', '$location', function($scope, infoService, $location) {
+        .controller('newsCtrl', ['$scope', 'infoService', '$location', '$base64', function($scope, infoService, $location, $base64) {
 
             $scope.title = '资讯信息';
 
@@ -61,6 +61,15 @@
                 });
                 $scope.currentTabs = index;
                 $scope.infoBufferNum = 20;
+            }
+
+            $scope.evilTwins = function(info){
+                return info.type == 2 && !!info.content.atts[0].attPath.match(/\.pdf\b/) ? 0 : info.type;
+            }
+
+            $scope.escapeUrl = function(url){
+                console.log(1);
+                return "#preview/" + $base64.encode(url);
             }
 
             //init infoList

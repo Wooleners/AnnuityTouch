@@ -1,22 +1,19 @@
-    angular.module('annuityApp.preview', ['ngRoute', 'pdf'])
+    angular.module('annuityApp.preview', ['ngRoute', 'pdf', 'base64'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/preview'  , {
+        $routeProvider.when('/preview/:path'  , {
             templateUrl: 'modules/preview/preview.html',
             controller: 'previewCtrl'
         });
     }])
 
-    .controller('previewCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+    .controller('previewCtrl', ['$scope', '$routeParams', '$base64', function($scope, $routeParams, $base64){
         $scope.title = '预览';
         //url
-        $scope.pdfUrl = $routeParams.path || null;
-        
+        $scope.pdfUrl = "http://www.pingan.com/cms-tmplt/attByStream.do?attPath=" + $base64.decode($routeParams.path);
+
         //nav init
         $scope.scroll = 0;
+        console.dir($scope);
 
-        $scope.getNavStyle = function(scroll) {
-            if (scroll > 100) return 'pdf-controls fixed';
-            else return 'pdf-controls';
-        }
     }]);
