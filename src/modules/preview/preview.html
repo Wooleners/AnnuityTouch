@@ -1,5 +1,12 @@
+<div class="controler">
+    <span ng-click="goPrevious()">上一页</span>
+    <span class="pageShow" ng-bind="pageToDisplay"></span>
+    <span ng-click="goNext()">下一页</span>
+    <span class="downloadPdf">
+        <a download href="{{pdfUrl}}">下载到本地</a>
+    </span>
+</div>
 <div class="wrapper">
     <ng-pdf template-url="modules/preview/viewer.html"></ng-pdf>
 </div>
-
 <div id="init-spinner-container"><div id="drive_main_init_spinner" class="a-Jf-Ma-m a-Da-wa-xb" tabindex="0"><div role="status" aria-label="正在加载"></div><div class="a-Ba"><div class="a-Oa-cb"></div><div class="a-gn-Ba Ga"><div class="Ba-kj Ba-Sc"><div class="Ba-cb-Gh Ba-gc"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-Cm-dn"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-cb-Gh Ba-Dc"><div class="Ba-cb Ba-ti"></div></div></div><div class="Ba-kj Ba-hn"><div class="Ba-cb-Gh Ba-gc"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-Cm-dn"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-cb-Gh Ba-Dc"><div class="Ba-cb Ba-ti"></div></div></div><div class="Ba-kj Ba-wn"><div class="Ba-cb-Gh Ba-gc"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-Cm-dn"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-cb-Gh Ba-Dc"><div class="Ba-cb Ba-ti"></div></div></div><div class="Ba-kj Ba-Em"><div class="Ba-cb-Gh Ba-gc"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-Cm-dn"><div class="Ba-cb Ba-ti"></div></div><div class="Ba-cb-Gh Ba-Dc"><div class="Ba-cb Ba-ti"></div></div></div></div></div></div></div>

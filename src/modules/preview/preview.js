@@ -11,9 +11,10 @@
         $scope.title = '预览';
         //url
         $scope.pdfUrl = "http://www.pingan.com/cms-tmplt/attByStream.do?attPath=" + $base64.decode($routeParams.path);
+        
+
 
         //nav init
         $scope.scroll = 0;
-        console.dir($scope);
 
     }]);

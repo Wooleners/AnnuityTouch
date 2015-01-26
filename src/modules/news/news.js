@@ -68,7 +68,6 @@
             }
 
             $scope.escapeUrl = function(url){
-                console.log(1);
                 return "#preview/" + $base64.encode(url);
             }
 

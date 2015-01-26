@@ -136,8 +136,12 @@
         <div class="consult-cont cl-333">
             <div>
                 <ul class="contentList1">
-                    <li ng-repeat="info in infoList">
-                        <a href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+                    <li ng-repeat="info in infoList" ng-switch on="evilTwins(info)" class="swiper-slide">
+                        <a ng-switch-when="1" href="#details/{{info.content.articleId}}" ng-bind="info.content.articleTitle"></a>
+                        <a ng-switch-when="0" ng-bind="info.content.articleTitle" href="{{escapeUrl(info.content.atts[0].attPath)}}"></a>
+                        <a ng-switch-when="2" ng-bind="info.content.articleTitle"  href="{{info.content.atts[0].attPath}}" download="{{info.content.atts[0].attPath}}"></a>
+                        <a ng-switch-when="3" ng-bind="info.content.articleTitle" ng-href="{{info.content.jumpLink}}"></a>
+
                     </li>
                 </ul>
             </div>

@@ -1,4 +1,4 @@
-    angular.module('annuityApp.main', ['ngRoute'])
+    angular.module('annuityApp.main', ['ngRoute', 'base64'])
 
         .config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
             //$locationProvider.html5Mode(true);
@@ -9,7 +9,7 @@
                 });
         }])
 
-        .controller('mainCtrl', ['$scope', 'infoService', function($scope, infoService){
+        .controller('mainCtrl', ['$scope', 'infoService', '$base64', function($scope, infoService, $base64){
 
             initSwipe();
             $scope.title = '平安养老险',
@@ -47,6 +47,14 @@
             $scope.infoList = [];
 
             initInfoList();
+
+            $scope.evilTwins = function(info){
+                return info.type == 2 && !!info.content.atts[0].attPath.match(/\.pdf\b/) ? 0 : info.type;
+            }
+
+            $scope.escapeUrl = function(url){
+                return "#preview/" + $base64.encode(url);
+            }
 
             $scope.toggleTabs = function(index){
                 //fliter

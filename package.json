@@ -33,6 +33,6 @@
   "scripts": {
     "prestart": "npm install",
     "postinstall": "bower install",
-    "start": "http-server -p 9000 -d /app -c-1 -o"
+    "start": "http-server -d /app -c-1"
   }
 }
