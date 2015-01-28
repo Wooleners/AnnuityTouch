@@ -39,7 +39,7 @@ angular.module('annuityApp.medical', ['ngRoute'])
     function initInfoList(){
         loadRemoteData({
             method: "articleList",
-            channelId: 1085,
+            channelId: 562,
             channelLevel: 2,
             number: 20
         });
@@ -69,7 +69,7 @@ angular.module('annuityApp.medical', ['ngRoute'])
     function initInfoList(){
         loadRemoteData({
             method: "articleList",
-            channelId: 1084,
+            channelId: 561,
             channelLevel: 2,
             number: 20
         });

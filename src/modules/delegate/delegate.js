@@ -190,7 +190,7 @@
         function initInfoList() {
             loadRemoteData({
                 method: "articleList",
-                channelId: 602,
+                channelId: 601,
                 channelLevel: 2,
                 number: 20
             });

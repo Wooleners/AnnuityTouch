@@ -294,7 +294,7 @@
         function initInfoList(){
             loadRemoteData({
                 method: "articleList",
-                channelId: 1062,
+                channelId: 559,
                 channelLevel: 2,
                 number: 20
             });
@@ -355,7 +355,7 @@
         function initInfoList(){
             loadRemoteData({
                 method: "articleList",
-                channelId: 643,
+                channelId: 560,
                 channelLevel: 2,
                 number: 10
             });
@@ -596,7 +596,7 @@
         function initInfoList(){
             loadRemoteData({
                 method: "articleList",
-                channelId: 644,
+                channelId: 209,
                 channelLevel: 2,
                 number: 20
             });
@@ -623,7 +623,7 @@
         function initInfoList(){
             loadRemoteData({
                 method: "articleList",
-                channelId: 645,
+                channelId: 210,
                 channelLevel: 2,
                 number: 20
             });
@@ -650,7 +650,7 @@
         function initInfoList(){
             loadRemoteData({
                 method: "articleList",
-                channelId: 1068,
+                channelId: 208,
                 channelLevel: 2,
                 number: 20
             });
