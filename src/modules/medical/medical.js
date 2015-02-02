@@ -25,7 +25,7 @@ angular.module('annuityApp.medical', ['ngRoute'])
 }])
 
 .controller('medicalGsCtrl', ['$scope', function($scope){
-
+    
 }])
 
 .controller('medicalPolicyCtrl', ['$scope', 'infoService', function($scope, infoService){
